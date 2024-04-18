@@ -1,0 +1,30 @@
+---
+import { Moon, Sun } from 'lucide-astro'
+---
+
+<script>
+    const button = document.querySelector("[data-context='themeSwitcherButton']");
+    const htmlElement = document.querySelector("html");
+    let isDarkTheme = htmlElement?.hasAttribute('data-theme');
+    const moonIcon = button?.querySelector('.moon-icon');
+    const sunIcon = button?.querySelector('.sun-icon');
+
+    button?.addEventListener('click', () => {
+        isDarkTheme = !isDarkTheme;
+        
+        if (isDarkTheme) {
+            htmlElement?.setAttribute('data-theme', 'dark');
+            moonIcon?.classList.add("hidden")
+            sunIcon?.classList.toggle("hidden")
+        } else {
+            htmlElement?.removeAttribute('data-theme');
+            moonIcon?.classList.toggle("hidden")
+            sunIcon?.classList.add("hidden")
+        }
+    })
+
+</script>
+
+<div>
+    <button data-context="themeSwitcherButton"><Moon  class="moon-icon hidden" /> <Sun class="sun-icon" /></button>
+</div>

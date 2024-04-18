@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --color-primary: gray;
+        --color-secondary: orange
+    }
+
+    @media (prefers-color-scheme:dark) {
+        :root {
+            --color-primary: green;
+            --color-secondary: pink
+        }
+    }
+
+    :root[data-theme="dark"]{
+        --color-primary: green;
+        --color-secondary: pink
+    }
+}
