@@ -6,7 +6,7 @@
 
 
 
- 
+
 :root {
 	--accent: #2337ff;
 	--accent-dark: #000d8a;
@@ -33,7 +33,7 @@
 	font-display: swap;
 }
 body {
-	font-family: 'Atkinson', sans-serif;
+	/* font-family: 'Atkinson', sans-serif;
 	margin: 0;
 	padding: 0;
 	text-align: left;
@@ -43,7 +43,7 @@ body {
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));
 	font-size: 20px;
-	line-height: 1.7;
+	line-height: 1.7; */
 }
 main {
 	width: 720px;
@@ -88,7 +88,7 @@ a:hover {
 }
 p {
 	margin-bottom: 1em;
-}
+} 	
 .prose p {
 	margin-bottom: 2em;
 }

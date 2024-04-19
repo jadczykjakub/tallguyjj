@@ -5,7 +5,9 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				primary: "var(--color-primary)"
+				primary: "var(--color-primary)",
+				bg: "var(--color-bg)",
+				text: 'var(--color-text)'
 			}
 		},
 	},

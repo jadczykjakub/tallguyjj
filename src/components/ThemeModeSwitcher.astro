@@ -4,27 +4,50 @@ import { Moon, Sun } from 'lucide-astro'
 
 <script>
     const button = document.querySelector("[data-context='themeSwitcherButton']");
-    const htmlElement = document.querySelector("html");
-    let isDarkTheme = htmlElement?.hasAttribute('data-theme');
     const moonIcon = button?.querySelector('.moon-icon');
     const sunIcon = button?.querySelector('.sun-icon');
 
     button?.addEventListener('click', () => {
-        isDarkTheme = !isDarkTheme;
+        const htmlElement = document.querySelector("html");
+        const isDarkTheme = localStorage.getItem('theme') === 'dark';
+
+
         
-        if (isDarkTheme) {
+        if (!isDarkTheme) {
             htmlElement?.setAttribute('data-theme', 'dark');
-            moonIcon?.classList.add("hidden")
-            sunIcon?.classList.toggle("hidden")
+            // moonIcon?.classList.toggle("hidden")
+            // sunIcon?.classList.toggle("hidden")
+            localStorage.setItem("theme", "dark");
+
         } else {
             htmlElement?.removeAttribute('data-theme');
-            moonIcon?.classList.toggle("hidden")
-            sunIcon?.classList.add("hidden")
+            // moonIcon?.classList.toggle("hidden")
+            // sunIcon?.classList.toggle("hidden")
+            
+            localStorage.setItem("theme", "light");
         }
     })
-
 </script>
 
-<div>
-    <button data-context="themeSwitcherButton"><Moon  class="moon-icon hidden" /> <Sun class="sun-icon" /></button>
-</div>
+
+<button data-context="themeSwitcherButton"><Moon  class="moon-icon" /> <Sun class="sun-icon toggle-icon " /> </button>
+
+<style>
+:root[data-theme='dark'] .moon-icon {
+    display: none;
+}
+
+.moon-icon{
+    display: block;
+}
+
+
+:root[data-theme='dark'] .sun-icon {
+    display: block;
+}
+
+.sun-icon{
+    display: none;
+}
+
+</style>
