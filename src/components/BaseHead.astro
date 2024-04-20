@@ -5,9 +5,9 @@
 import '../styles/index.css';
 
 interface Props {
-	title: string;
-	description: string;
-	image?: string;
+  title: string;
+  description: string;
+  image?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -48,27 +48,31 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
 <script>
-		// This code is inlined in the head to make dark mode instant & blocking.
-		const getThemePreference = () => {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-			return localStorage.getItem('theme');
-		}
-		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-	};
-	const isDark = getThemePreference() === 'dark';
+  // This code is inlined in the head to make dark mode instant & blocking.
+  const getThemePreference = () => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      console.log('tutut');
+      return localStorage.getItem('theme');
+    }
+    console.log(window.matchMedia('(prefers-color-scheme: dark)').matches, 'hihi');
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  };
+  const isDark = getThemePreference() === 'dark';
 
-	console.log("elo", isDark);
+  console.log('elo', isDark);
 
-	isDark ? document?.querySelector("html")?.setAttribute('data-theme', 'dark') : document?.querySelector("html")?.removeAttribute('data-theme');
-	document?.querySelector("html")?.setAttribute('data-theme', `${isDark ? 'dark' : '' }`)
-	// document.documentElement.classList[isDark ? 'add' : 'remove']('theme-dark');
+  isDark
+    ? document?.querySelector('html')?.setAttribute('data-theme', 'dark')
+    : document?.querySelector('html')?.removeAttribute('data-theme');
+  document?.querySelector('html')?.setAttribute('data-theme', `${isDark ? 'dark' : ''}`);
+  // document.documentElement.classList[isDark ? 'add' : 'remove']('theme-dark');
 
-	// if (typeof localStorage !== 'undefined') {
-	// 	// Watch the document element and persist user preference when it changes.
-	// 	const observer = new MutationObserver(() => {
-	// 		const isDark = document.documentElement.classList.contains('theme-dark');
-	// 		localStorage.setItem('theme', isDark ? 'dark' : 'light');
-	// 	});
-	// 	observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-	// }
+  // if (typeof localStorage !== 'undefined') {
+  // 	// Watch the document element and persist user preference when it changes.
+  // 	const observer = new MutationObserver(() => {
+  // 		const isDark = document.documentElement.classList.contains('theme-dark');
+  // 		localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  // 	});
+  // 	observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+  // }
 </script>

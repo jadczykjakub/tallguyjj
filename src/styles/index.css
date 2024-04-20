@@ -3,42 +3,32 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        --color-bg: #fff;
-        --color-text: #000;
-        --color-primary: #1d9a9f;
-        --gray-light: 229, 233, 240;
-        --gray-dark: 34, 41, 57;
-        --gray-gradient: rgba(var(--gray-light), 50%), #fff;
-        --color-secondary: orange
-    }
-
-    :root[data-theme="dark"]{
-        --color-bg: #0f172a;
-        --color-text: #fff;
-
-        --color-primary: #1d9a9f;
-        --color-secondary: pink
-    }
-
-    /* @media (prefers-color-scheme:dark) {
-        :root {
-            --color-primary: green;
-            --color-secondary: pink
-        }
-    } */
-}
-
-
-body {
-    @apply bg-bg text-text;
-    
+  :root {
+    --color-bg: #fff;
+    --color-text: #000;
+    --color-primary: #1d9a9f;
+    --gray-light: 229, 233, 240;
+    --gray-dark: 34, 41, 57;
+    --gray-gradient: rgba(var(--gray-light), 50%), #fff;
+    --color-secondary: orange;
   }
 
-.header {
-    
+  :root[data-theme='dark'] {
+    --color-bg: #0f172a;
+    --color-text: #fff;
+
+    --color-primary: #1d9a9f;
+    --color-secondary: pink;
+  }
 }
 
-main{
-    @apply max-w-3xl mx-auto px-4 min-h-[calc(100vh-8em)] pt-8 pb-8 transition-colors;
+body {
+  @apply bg-bg text-text;
+}
+
+.header {
+}
+
+main {
+  @apply max-w-3xl mx-auto px-4 min-h-[calc(100vh-8em)] pt-8 pb-8 transition-colors;
 }
