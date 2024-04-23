@@ -90,7 +90,7 @@ const TechStackCard = () => {
               onMouseMove={(e) => showHoverAnimation(e)}
               onMouseLeave={(e) => removeHoverAnimation(e)}
             >
-              <div className="pointer-events-none relative border border-primary p-4 grid justify-items-center gap-2">
+              <div className="pointer-events-none relative border-2 border-primary p-4 grid justify-items-center gap-2">
                 <p className="hidden md:block">{card.name}</p>
                 <div>
                   <card.logo className="h-8 w-8" fill="var(--color-primary)" />

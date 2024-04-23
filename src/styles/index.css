@@ -7,13 +7,14 @@
     --color-bg: #fff;
     --color-text: #000;
     --color-primary: #1d9a9f;
+
     --gray-light: 229, 233, 240;
     --gray-dark: 34, 41, 57;
     --gray-gradient: rgba(var(--gray-light), 50%), #fff;
     --color-secondary: orange;
   }
 
-  :root[data-theme='dark'] {
+  :root[data-theme="dark"] {
     --color-bg: #0f172a;
     --color-text: #fff;
 
@@ -30,5 +31,38 @@ body {
 }
 
 main {
-  @apply max-w-3xl mx-auto px-4 min-h-[calc(100vh-8em)] pt-8 pb-8 transition-colors;
+  @apply max-w-3xl mx-auto px-4 min-h-[calc(100vh-8em)] pt-16 pb-8 transition-colors;
+}
+
+pre {
+  padding: 1.5em;
+  border-radius: 8px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+mark {
+  background-color: red;
+  border-radius: 20px;
+  padding: 0 5px;
+}
+
+h1 {
+  font-size: 3.052em;
+}
+h2 {
+  font-size: 2.441em;
+}
+h3 {
+  font-size: 1.953em;
+}
+h4 {
+  font-size: 1.563em;
+}
+h5 {
+  font-size: 1.25em;
 }
