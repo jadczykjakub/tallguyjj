@@ -16,5 +16,8 @@ const { Content } = await post.render();
 ---
 
 <BlogPost {...post.data}>
-  <Content />
+  <div class="grid gap-4">
+    <Content />
+  </div>
+
 </BlogPost>

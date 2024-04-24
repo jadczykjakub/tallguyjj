@@ -8,15 +8,15 @@ import { FadeContainer, popUp } from '../lib/FramerMotionVariants';
 import TechStackCards from '../components/TechStackCards.jsx';
 
 const posts = (await getCollection('blog'))
-  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()) 
   .slice(0, 3);
 ---
 
 <BaseLayout title="homepage" decription="homepage2">
   <div class="grid gap-8">
     <div>
-      <h1 class="text-3xl font-bold dark:underline bg-primary">
-        🧑‍🚀 Hello, my name is Jakub Jadczyk and im really tall guy :)
+      <h1 class="text-3xl font-bold dark:underline">
+        Hello, my name is Jakub Jadczyk and im really tall guy :)
       </h1>
       <p></p>
       <p>
@@ -51,7 +51,7 @@ const posts = (await getCollection('blog'))
           ))
         }
       </ul>
-      <a href="/blog">see all blog post</a>
+      <a href="/blog" class="nav-button mx-auto my-8">see all blog post</a>
     </div>
   </div>
 </BaseLayout>

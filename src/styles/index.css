@@ -34,6 +34,10 @@ main {
   @apply max-w-3xl mx-auto px-4 min-h-[calc(100vh-8em)] pt-16 pb-8 transition-colors;
 }
 
+.nav-button{
+  @apply bg-primary text-bg max-w-fit px-4 py-2 rounded-2xl opacity-80 hover:opacity-100 transition-opacity
+}
+
 pre {
   padding: 1.5em;
   border-radius: 8px;
@@ -66,3 +70,4 @@ h4 {
 h5 {
   font-size: 1.25em;
 }
+
