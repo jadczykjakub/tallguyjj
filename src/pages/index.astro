@@ -8,25 +8,20 @@ import { FadeContainer, popUp } from '../lib/FramerMotionVariants';
 import TechStackCards from '../components/TechStackCards.jsx';
 
 const posts = (await getCollection('blog'))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()) 
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
 ---
 
 <BaseLayout title="homepage" decription="homepage2">
   <div class="grid gap-8">
-    <div>
-      <h1 class="text-3xl font-bold dark:underline">
-        Hello, my name is Jakub Jadczyk and im really tall guy :)
+    <div class="flex gap-8">
+      <h1 class="text-3xl dark:underline grid gap-2 ">
+        <span class="text-xs" >Im really tall guy</span>
+        <span class="font-bold" > My name is Jakub Jadczyk. </span>
+        <span class="text-sm">and im Fullstack developer</span>
       </h1>
-      <p></p>
-      <p>
-        I'm a full stack developer with several year of professional experience in web development
-      </p>
-      <p>If you need any help, visit my offert, maybe we can create something together</p>
-      <p>
-        Teaching somebody is the best way to gain knowledge, so i have my own blog. Don't hesitate
-        to visit it
-      </p>
+
+      <div>here photo</div>
     </div>
 
     <div class="grid gap-8">
@@ -34,7 +29,7 @@ const posts = (await getCollection('blog'))
       <TechStackCards client:visible />
     </div>
 
-    <div class="grid gap-3">
+    <div class="grid gap-8">
       <h2 class="text-center">Recent posts</h2>
       <ul class="grid grid-cols-3 gap-4">
         {
@@ -51,7 +46,7 @@ const posts = (await getCollection('blog'))
           ))
         }
       </ul>
-      <a href="/blog" class="nav-button mx-auto my-8">see all blog post</a>
+      <a href="/blog" class="nav-button mx-auto">see all blog post</a>
     </div>
   </div>
 </BaseLayout>
