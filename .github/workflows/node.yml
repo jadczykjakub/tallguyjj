@@ -6,7 +6,7 @@ on:
     branches: [ master ]
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js version 20
@@ -14,3 +14,20 @@ jobs:
         with:
           node-version: '20'
       - run: npm install
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # No changes
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.DOCKERHUB }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          push: true
+          tags: jakubjadczyk/my-image:latest
