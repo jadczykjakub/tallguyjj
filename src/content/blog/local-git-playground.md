@@ -40,7 +40,7 @@ git remote add origin ../fake-repo
 
 On computer1 and computer2, we initialize the repository and connect to the origin from the 'fake-repo' directory. We can connect as many repositories as we want to our fake-repo. 
 
-![fake repo diagram1](/blog/nginx-reverse-proxy/1.png)
+![fake repo diagram1](/blog/local-git-playground/1.png)
 
 It very simple and fast way to create git repo for testing purposes. 
 
